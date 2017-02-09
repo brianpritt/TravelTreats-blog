@@ -1,11 +1,15 @@
-﻿@model TravelTreats.Models.Experience
-@{
+﻿@model TravelTreats.Models.Encounter
     ViewData["Title"] = "TravelTreats";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <h2>Details</h2>
 <hr />
-<p>@Html.DisplayNameFor(model => model.Description): @Html.DisplayFor(model => model.Description)</p>
-<p>@Html.DisplayNameFor(model => model.MealType.MealTypeName): @Html.DisplayFor(model => model.MealType.MealTypeName)</p>
-<p>@Html.DisplayNameFor(model => model.Locations.LocationName): @Html.DisplayFor(model => model.Locations.LocationName)</p>
+<p>@Html.DisplayNameFor(model => model.Experience.Description): @Html.DisplayFor(model => model.Experience.Description)</p>
+<p>@Html.DisplayNameFor(model => model.Experience.MealType.MealTypeName): @Html.DisplayFor(model => model.Experience.MealType.MealTypeName)</p>
+<p>@Html.DisplayNameFor(model => model.Experience.Locations.LocationName): @Html.DisplayFor(model => model.Experience.Locations.LocationName)</p>
+@foreach (var person in Model.Persons)
+{
+    <p>person.PersonName</p>
+}
 @Html.ActionLink("Back to list", "Index")
+@Html.ActionLink("Add Person", "Create", "Persons", new { id = Model.Experience.ExperienceId})

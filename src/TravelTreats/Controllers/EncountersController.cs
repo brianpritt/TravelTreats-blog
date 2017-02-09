@@ -21,7 +21,7 @@ namespace TravelTreats.Controllers
             var encounterList = db.Encounters
                 .Include(encounters => encounters.Experience)
                 .ThenInclude(experiences => experiences.MealType)
-                .Include(encounters => encounters.Person).ToList();
+                .Include(encounters => encounters.Persons).ToList();
            
             return View(encounterList);
         }
