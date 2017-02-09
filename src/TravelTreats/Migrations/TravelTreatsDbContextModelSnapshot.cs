@@ -43,7 +43,7 @@ namespace TravelTreats.Migrations
 
                     b.Property<int>("LocationId");
 
-                    b.Property<string>("MealType");
+                    b.Property<int>("MealTypeId");
 
                     b.HasKey("ExperienceId");
 
@@ -63,6 +63,18 @@ namespace TravelTreats.Migrations
                     b.HasKey("LocationId");
 
                     b.ToTable("Locations");
+                });
+
+            modelBuilder.Entity("TravelTreats.Models.MealType", b =>
+                {
+                    b.Property<int>("MealTypeId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("MealTypeName");
+
+                    b.HasKey("MealTypeId");
+
+                    b.ToTable("MealTypes");
                 });
 
             modelBuilder.Entity("TravelTreats.Models.Person", b =>

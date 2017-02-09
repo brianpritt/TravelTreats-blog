@@ -23,6 +23,19 @@ namespace TravelTreats.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "MealTypes",
+                columns: table => new
+                {
+                    MealTypeId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    MealTypeName = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_MealTypes", x => x.MealTypeId);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Persons",
                 columns: table => new
                 {
@@ -43,7 +56,7 @@ namespace TravelTreats.Migrations
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Description = table.Column<string>(nullable: true),
                     LocationId = table.Column<int>(nullable: false),
-                    MealType = table.Column<string>(nullable: true)
+                    MealTypeId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -95,13 +108,17 @@ namespace TravelTreats.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_Experiences_LocationId",
                 table: "Experiences",
-                column: "LocationId");
+                column: "LocationId",
+                unique: true);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
                 name: "Encounters");
+
+            migrationBuilder.DropTable(
+                name: "MealTypes");
 
             migrationBuilder.DropTable(
                 name: "Experiences");

@@ -197,11 +197,14 @@
 --resource:"C:\Users\epicodus\Desktop\TravelTreats\src\TravelTreats\obj\Debug\netcoreapp1.0\TravelTreatsdotnet-compile.deps.json",TravelTreats.deps.json
 C:\Users\epicodus\Desktop\TravelTreats\src\TravelTreats\Program.cs
 C:\Users\epicodus\Desktop\TravelTreats\src\TravelTreats\Startup.cs
-C:\Users\epicodus\Desktop\TravelTreats\src\TravelTreats\Migrations\20170208185851_Initial.cs
-C:\Users\epicodus\Desktop\TravelTreats\src\TravelTreats\Migrations\20170208185851_Initial.Designer.cs
+C:\Users\epicodus\Desktop\TravelTreats\src\TravelTreats\Controllers\ExperiencesController.cs
+C:\Users\epicodus\Desktop\TravelTreats\src\TravelTreats\Controllers\HomeController.cs
+C:\Users\epicodus\Desktop\TravelTreats\src\TravelTreats\Migrations\20170208235320_Initial.cs
+C:\Users\epicodus\Desktop\TravelTreats\src\TravelTreats\Migrations\20170208235320_Initial.Designer.cs
 C:\Users\epicodus\Desktop\TravelTreats\src\TravelTreats\Migrations\TravelTreatsDbContextModelSnapshot.cs
 C:\Users\epicodus\Desktop\TravelTreats\src\TravelTreats\Models\Encounter.cs
 C:\Users\epicodus\Desktop\TravelTreats\src\TravelTreats\Models\Experience.cs
 C:\Users\epicodus\Desktop\TravelTreats\src\TravelTreats\Models\Location.cs
+C:\Users\epicodus\Desktop\TravelTreats\src\TravelTreats\Models\MealType.cs
 C:\Users\epicodus\Desktop\TravelTreats\src\TravelTreats\Models\Person.cs
 C:\Users\epicodus\Desktop\TravelTreats\src\TravelTreats\Models\TravelTreatsDbContext.cs

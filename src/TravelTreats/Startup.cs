@@ -39,7 +39,7 @@ namespace TravelTreats
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Teams}/{action=Index}/{id?}");
+                    template: "{controller=Home}/{action=Index}/{id?}");
             });
 
             app.Run(async (context) =>

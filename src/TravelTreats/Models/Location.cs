@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace TravelTreats.Models
@@ -9,7 +10,7 @@ namespace TravelTreats.Models
         [Key]
         public int LocationId { get; set; }
         public string LocationName { get; set; }
-        public virtual Experience Experience { get; set; }
+        public ICollection<Experience> Experiences { get; set; }
 
     }
 }
