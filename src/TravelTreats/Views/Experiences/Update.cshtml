@@ -1,8 +1,10 @@
 ﻿@model TravelTreats.Models.Experience
-<h2>Add an Experience</h2>
-<hr/>
+<h2>Edit an Experience</h2>
+<hr />
 @using (Html.BeginForm())
 {
+    @Html.HiddenFor(model => model.ExperienceId)
+
     @Html.LabelFor(model => model.Description, "Description: ")
     @Html.EditorFor(model => model.Description)
 
@@ -12,6 +14,6 @@
     @Html.LabelFor(model => model.MealTypeId, "Type of food: ")
     @Html.DropDownList("MealTypeId")
 
-    <input type="submit" value="Create"/>
+    <input type="submit" value="Update" />
 }
 @Html.ActionLink("back to list", "Index")

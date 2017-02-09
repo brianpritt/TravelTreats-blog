@@ -67,6 +67,12 @@ namespace TravelTreats.Migrations
                         principalTable: "Locations",
                         principalColumn: "LocationId",
                         onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Experiences_MealTypes_MealTypeId",
+                        column: x => x.MealTypeId,
+                        principalTable: "MealTypes",
+                        principalColumn: "MealTypeId",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -108,17 +114,18 @@ namespace TravelTreats.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_Experiences_LocationId",
                 table: "Experiences",
-                column: "LocationId",
-                unique: true);
+                column: "LocationId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Experiences_MealTypeId",
+                table: "Experiences",
+                column: "MealTypeId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
                 name: "Encounters");
-
-            migrationBuilder.DropTable(
-                name: "MealTypes");
 
             migrationBuilder.DropTable(
                 name: "Experiences");
@@ -128,6 +135,9 @@ namespace TravelTreats.Migrations
 
             migrationBuilder.DropTable(
                 name: "Locations");
+
+            migrationBuilder.DropTable(
+                name: "MealTypes");
         }
     }
 }

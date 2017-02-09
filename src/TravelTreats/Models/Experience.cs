@@ -9,10 +9,11 @@ namespace TravelTreats.Models
         [Key]
         public int ExperienceId { get; set; }
         public int LocationId { get; set; }
-
-        public string Description { get; set; }
         public int MealTypeId { get; set; }
-        public MealType MealType { get; set; }
+        public string Description { get; set; }
+        public virtual Location Locations { get; set; }
+        public virtual MealType MealType { get; set; }
+        //public virtual Person Person { get; set; }
         public ICollection<Encounter> Encounters { get; set; }
     }
 }

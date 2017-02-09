@@ -8,7 +8,7 @@ using TravelTreats.Models;
 namespace TravelTreats.Migrations
 {
     [DbContext(typeof(TravelTreatsDbContext))]
-    [Migration("20170208235320_Initial")]
+    [Migration("20170209163648_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -48,8 +48,9 @@ namespace TravelTreats.Migrations
 
                     b.HasKey("ExperienceId");
 
-                    b.HasIndex("LocationId")
-                        .IsUnique();
+                    b.HasIndex("LocationId");
+
+                    b.HasIndex("MealTypeId");
 
                     b.ToTable("Experiences");
                 });
@@ -105,9 +106,14 @@ namespace TravelTreats.Migrations
 
             modelBuilder.Entity("TravelTreats.Models.Experience", b =>
                 {
-                    b.HasOne("TravelTreats.Models.Location")
-                        .WithOne("Experience")
-                        .HasForeignKey("TravelTreats.Models.Experience", "LocationId")
+                    b.HasOne("TravelTreats.Models.Location", "Location")
+                        .WithMany("Experiences")
+                        .HasForeignKey("LocationId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("TravelTreats.Models.MealType", "MealType")
+                        .WithMany("Experiences")
+                        .HasForeignKey("MealTypeId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
         }
