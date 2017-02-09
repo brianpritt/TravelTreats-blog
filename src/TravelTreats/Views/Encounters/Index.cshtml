@@ -1,0 +1,30 @@
+﻿@model IEnumerable<TravelTreats.Models.Encounter>
+@{
+    ViewData["Title"] = "TravelTreats";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Encounters!!!</h2>
+<table class="table">
+    <tr>
+        <th>
+            <h2>Encounters</h2>
+        </th>
+    </tr>
+    @foreach (var encounter in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelEncounter => encounter.Experience.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelEncounter => encounter.Experience.MealType.MealTypeName) 
+            </td>
+            <td>
+                @Html.DisplayFor(modelEncounter => encounter.Person.PersonName)
+            </td>
+        </tr>
+    }
+</table>
+@Html.ActionLink("Add a new experience", "Create")
+@Html.ActionLink("Add a new encounter", "Create", "Encounters", null)

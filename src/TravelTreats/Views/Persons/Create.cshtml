@@ -1,0 +1,17 @@
+﻿
+@model TravelTreats.Models.Person
+@{
+    ViewData["Title"] = "TravelTreats";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Add an Experience</h2>
+<hr />
+@using (Html.BeginForm())
+{
+
+    @Html.LabelFor(model => model.PersonName, "Name: ")
+    @Html.EditorFor(model => model.PersonName)
+
+    <input type="submit" value="AddPerson" />
+}
+@Html.ActionLink("back to experience", "Index", "Experiences", null)

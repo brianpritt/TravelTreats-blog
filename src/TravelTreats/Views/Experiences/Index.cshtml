@@ -1,4 +1,8 @@
 ﻿@model IEnumerable<TravelTreats.Models.Experience>
+@{
+    ViewData["Title"] = "TravelTreats";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
 @*
     
 *@
@@ -25,4 +29,5 @@
     </tr>
 }
 </table>
-@Html.ActionLink("Create", "Create")
+@Html.ActionLink("Add a new experience", "Create")
+@Html.ActionLink("Add a new encounter", "Create", "Encounters", null)

@@ -1,2 +1,7 @@
-﻿<h2>TravelTreats!</h2>
+﻿@{
+    ViewData["Title"] = "TravelTreats";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>TravelTreats!</h2>
 @Html.ActionLink("Experiences","Index", "Experiences",null);
+@Html.ActionLink("Add Person", "Create", "Persons", null);

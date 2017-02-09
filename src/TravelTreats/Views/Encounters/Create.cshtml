@@ -1,0 +1,18 @@
+﻿@model TravelTreats.Models.Encounter
+@{
+    ViewData["Title"] = "TravelTreats";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Add an Experience</h2>
+<hr />
+@using (Html.BeginForm())
+{
+
+    <label>Person</label>
+    @Html.DropDownList("PersonId")
+    <label>Experience</label>
+    @Html.DropDownList("ExperienceId")
+
+    <input type="submit" value="Create" />
+}
+@Html.ActionLink("back to home", "Index", "Home", null)
