@@ -18,11 +18,11 @@ namespace TravelTreats.Controllers
         }
         public IActionResult Details(int id)
         {
-            var thisExperieince = db.Experiences
+            var thisExperience = db.Experiences
                 .Include(experiences => experiences.Locations)
                 .Include(experiences => experiences.MealType)
                 .FirstOrDefault( experiences => experiences.ExperienceId == id);
-            return View(thisExperieince);
+            return View(thisExperience);
         }
         public ActionResult Create()
         {

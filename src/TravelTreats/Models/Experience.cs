@@ -13,7 +13,7 @@ namespace TravelTreats.Models
         public string Description { get; set; }
         public virtual Location Locations { get; set; }
         public virtual MealType MealType { get; set; }
-        public virtual Person Person { get; set; }
+        //public virtual Person Person { get; set; }
         public ICollection<Encounter> Encounters { get; set; }
     }
 }

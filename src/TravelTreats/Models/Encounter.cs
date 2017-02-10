@@ -11,6 +11,6 @@ namespace TravelTreats.Models
         public int ExperienceId { get; set;}
         public int PersonId { get; set; }
         public virtual Experience Experience { get; set; }
-        public virtual ICollection<Person> Persons { get; set; }
+        public virtual Person Persons { get; set; }
     }
 }
